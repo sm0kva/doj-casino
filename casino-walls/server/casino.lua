@@ -1,5 +1,17 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
+QBCore.Functions.AddItem('casino_goldchip', {
+    name = 'casino_goldchip',
+    weight = 0,
+    type = 'item',
+    image = 'casino_goldchip.png',
+    unique = false,
+    useable = false,
+    shouldClose = false,
+    combinable = nil,
+    description = 'Casino Chip'
+})
+
 local quantity = 0
 local ItemList = {
     ["casino_goldchip"] = 1,
