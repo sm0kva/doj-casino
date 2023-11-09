@@ -69,77 +69,9 @@ end)
 
 
 QBCore.Functions.CreateCallback('doj:server:HasCasinoMembership', function(source, cb)
-    local Player = QBCore.Functions.GetPlayer(source)
-    local Item = Player.Functions.GetItemByName("casino_member")
-
-    if Item ~= nil then 
-        cb(true)
-    else
-        cb(false)
-    end
+    cb(true)
 end)
 
 QBCore.Functions.CreateCallback('doj:server:HasVIPMembership', function(source, cb)
-    local Player = QBCore.Functions.GetPlayer(source)
-    local Item = Player.Functions.GetItemByName("casino_vip")
-
-    if Item ~= nil then 
-        cb(true)
-    else
-        cb(false)
-    end
+    cb(true)
 end)
-
-
-
-
-
--- RegisterNetEvent("doj:server:validateMembership")
--- AddEventHandler("doj:server:validateMembership", function(args)
---     local src = source
---     local Player = QBCore.Functions.GetPlayer(src)
---     local args = tonumber(args)
--- 	if args == 1 then 
---         if Player.Functions.GetItemByName("casino_member") then
---             Player.Functions.RemoveItem("casino_member", 1)
---             local info = {
---                 owner = Player.PlayerData.charinfo.firstname.." "..Player.PlayerData.charinfo.lastname,
---             }
---             Player.Functions.AddItem("casino_member_validated", 1, false, info)
---             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["casino_member_validated"], "add", 1) 
---             TriggerClientEvent('QBCore:Notify', src, "Membership has been validated", "success")
---         else
---             TriggerClientEvent('QBCore:Notify', src, "You need to buy a Casino Membership first", "error")
---         end
---     else
---         if Player.Functions.GetItemByName("casino_vip") then
---             Player.Functions.RemoveItem("casino_vip", 1)
---             local info = {
---                 owner = Player.PlayerData.charinfo.firstname.." "..Player.PlayerData.charinfo.lastname,
---             }
---             Player.Functions.AddItem("casino_vip_validated", 1, false, info)
---             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["casino_vip_validated"], "add", 1) 
---             TriggerClientEvent('QBCore:Notify', src, "Membership has been validated", "success")
---         else
---             TriggerClientEvent('QBCore:Notify', src, "You need to buy a V.I.P Membership first", "error")
---         end
---     end
--- end)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
